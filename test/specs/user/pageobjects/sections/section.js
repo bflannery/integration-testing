@@ -1,4 +1,3 @@
-
 class Section {
 	getBaseUrl() {
 		const url = browser.getUrl()

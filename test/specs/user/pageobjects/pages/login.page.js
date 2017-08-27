@@ -1,5 +1,3 @@
-// login.page.js
-
 const Page = require('./page')
 const secret = require('../../../../../secret').secret
 
