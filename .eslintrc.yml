@@ -1,0 +1,39 @@
+env:
+  browser: true
+  node: true
+extends:
+  - 'plugin:import/errors'
+  - 'plugin:import/warnings'
+parserOptions:
+  ecmaVersion: 6
+  ecmaFeatures:
+   experimentalObjectRestSpread: true
+plugins:
+  - lodash
+rules:
+  arrow-parens: 0
+  comma-dangle:
+    - 2
+    - only-multiline
+  indent:
+    - error
+    - tab
+  new-cap: 0
+  no-console: 1
+  no-debugger: 1
+  no-plusplus: 0
+  no-restricted-syntax: 0
+  no-use-before-define: 0
+  lodash/import-scope:
+    - 2
+    - member
+  quotes:
+    - error
+    - single
+  semi:
+    - 2
+    - never
+settings:
+  import/ignore:
+    - node_modules
+

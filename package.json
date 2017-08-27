@@ -1,0 +1,29 @@
+{
+  "name": "to-e2e-testing",
+  "version": "1.0.0",
+  "description": "e2e tests for TO ecosystem",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint test",
+    "test-local": "wdio",
+    "test-dev": "wdio wdio.dev.conf.js"
+  },
+  "author": "Brian Flannery",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "wdio-mocha-framework": "^0.5.11",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "^0.1.2",
+    "webdriverio": "^4.8.0"
+  },
+  "dependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-lodash": "^2.4.5",
+    "eslint-plugin-mocha": "^4.11.0",
+    "lodash": "latest"
+  }
+}
