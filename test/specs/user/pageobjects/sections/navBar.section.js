@@ -163,7 +163,7 @@ class NavBarSection extends Section {
 	// Checks if Nav Route matches the correct url
 	urlAssertion(selector, path) {
   	this.clickNavItem(selector)
-		assert.equal(this.returnURL(), (this.getBaseUrl() + path))
+		assert.equal(this.returnURL(), (this.getBaseUrl()).concat(path))
 	}
 }
 

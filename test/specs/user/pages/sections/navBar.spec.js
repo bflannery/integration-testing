@@ -156,7 +156,7 @@ describe('NavBar', () => {
 			})
 		})
 	})
-	
+
 	// Publish Changes
 	describe('Publish Changes', () => {
 		beforeEach(() => {
