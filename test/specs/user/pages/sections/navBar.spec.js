@@ -156,22 +156,22 @@ describe('NavBar', () => {
 			})
 		})
 	})
+	
 	// Publish Changes
 	describe('Publish Changes', () => {
 		beforeEach(() => {
 			NavBarSection.clickNavItem(NavBarSection.publishChangesButton)
-			browser.waitForExist('#modal-confirm-publish')
 		})
 		it('should display a confirmation modal when publish button is clicked from Home Page', () => {
-			assert.equal((NavBarSection.publishChangesModal.isExisting()), true)
+			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), true)
 		})
 		it('should close modal when cancel is clicked', function () {
 			NavBarSection.clickNavItem(NavBarSection.publishChangesModalCancel)
-			assert.equal((NavBarSection.publishChangesModal.isExisting()), false)
+			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), false)
 		})
 		it('should close modal when confirm is clicked', function () {
 			NavBarSection.clickNavItem(NavBarSection.publishChangesModalConfirm)
-			assert.equal((NavBarSection.publishChangesModal.isExisting()), false)
+			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), false)
 		})
 	})
 })
