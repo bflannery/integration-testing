@@ -1,6 +1,7 @@
 const assert = require('assert')
 const LoginPage = require('../../pageobjects/pages/login.page')
 const NavBarSection = require('../../pageobjects/sections/navBar.section')
+const TopBarSection = require('../../pageobjects/sections/topBar.section')
 
 describe('NavBar', () => {
 	beforeEach(() => {
@@ -160,18 +161,33 @@ describe('NavBar', () => {
 	// Publish Changes
 	describe('Publish Changes', () => {
 		beforeEach(() => {
+			browser.waitUntil(() => {
+				return NavBarSection.publishChangesButton.getAttribute('class') === 'btn btn-publish-orange waves-effect waves-light m-t-15 pull-right'
+			}, 10000)
 			NavBarSection.clickNavItem(NavBarSection.publishChangesButton)
 		})
 		it('should display a confirmation modal when publish button is clicked from Home Page', () => {
 			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), true)
 		})
-		it('should close modal when cancel is clicked', function () {
+		it('should close modal when cancel is clicked', () => {
 			NavBarSection.clickNavItem(NavBarSection.publishChangesModalCancel)
 			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), false)
 		})
-		it('should close modal when confirm is clicked', function () {
+		it('should close modal when confirm is clicked', () =>  {
 			NavBarSection.clickNavItem(NavBarSection.publishChangesModalConfirm)
 			assert.equal((NavBarSection.publishChangesModalContent.isExisting()), false)
+		})
+		it('should disable the publish button while saving and enable after saved', () => {
+			NavBarSection.clickNavItem(NavBarSection.publishChangesModalConfirm)
+			browser.waitUntil(() => {
+				return NavBarSection.publishChangesButton.getAttribute('class') === 'btn btn-gray waves-effect waves-light m-t-15 pull-right disabled'
+			}, 10000)
+			assert.equal(NavBarSection.publishChangesButton.getAttribute('class'), 'btn btn-gray waves-effect waves-light m-t-15 pull-right disabled')
+			
+			browser.waitUntil(() => {
+				return NavBarSection.publishChangesButton.getAttribute('class') === 'btn btn-publish-orange waves-effect waves-light m-t-15 pull-right'
+			}, 10000)
+			assert.equal(NavBarSection.publishChangesButton.getAttribute('class'), 'btn btn-publish-orange waves-effect waves-light m-t-15 pull-right')
 		})
 	})
 })
