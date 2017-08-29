@@ -147,7 +147,7 @@ class NavBarSection extends Section {
 		return browser.element('.modal .modal-dialog .modal-content .modal-footer button:first-child')
 	}
 	get publishChangesModalConfirm() {
-		return browser.element('.modal .modal-dialog .modal-content .modal-footer button:nth-of-type(2)')
+		return browser.element('.modal .modal-dialog .modal-content .modal-footer button:nth-child(2)')
 	}
 	
 	// Clicks a Nav Item
