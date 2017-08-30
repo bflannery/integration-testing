@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint test",
     "test-local": "wdio",
-    "test-dev": "wdio wdio.dev.conf.js"
+    "test-dev": "wdio wdio.dev.conf.js --spec ./test/specs/user/pages/inventory/inventory.spec.js"
   },
   "author": "Brian Flannery",
   "license": "ISC",
